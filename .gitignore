@@ -107,3 +107,4 @@ venv.bak/
 
 # data directory
 resources/data
+root_key
