@@ -1,13 +1,14 @@
 env:
-  - TRAVIS=true
+- TRAVIS=true
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - pip install -r requirements.txt -q
-before_script: cd tests
+- pip install -r requirements.txt -q
+before_script:
+- cd tests
+- bash test_mypy.sh
+before_install:
+- openssl aes-256-cbc -K $MY_KEY -iv $MY_IV -in root_key.enc -out root_key -d
 script:
-  - pytest
-branches:
-  only: 
-    - master
+- echo "SCRIPT SECTION"
