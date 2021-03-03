@@ -106,3 +106,4 @@ venv.bak/
 .mypy_cache/
 
 Pipfile.lock
+root_key
