@@ -108,3 +108,4 @@ venv.bak/
 Pipfile.lock
 
 resources/taggers/
+root_key
