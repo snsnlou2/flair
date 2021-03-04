@@ -1,14 +1,15 @@
 language: python
 sudo: false
 env:
-  - BOTO_CONFIG=/dev/null
+- BOTO_CONFIG=/dev/null
 python:
-  - "3.6"
+- '3.6'
 install:
-  - python setup.py develop -q
-before_script: cd tests
+- python setup.py develop -q
+before_script:
+- cd tests
+- bash test_mypy.sh
+before_install:
+- openssl aes-256-cbc -K $MY_KEY -iv $MY_IV -in root_key.enc -out root_key -d
 script:
-  - pip freeze
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then pytest --runintegration; fi'
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then pytest; fi'
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then pip install black; black --check .; fi'
+- echo "SCRIPT SECTION"
